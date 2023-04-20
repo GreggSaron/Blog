@@ -25,7 +25,6 @@ const EditProfile = () => {
     reset()
     editAccount(request)
   }
-  console.log(JSON.parse(localStorage.getItem('user')).username)
 
   return (
     <div className="edit-profile-container">
@@ -35,7 +34,6 @@ const EditProfile = () => {
           Username
         </label>
         <input
-          value={JSON.parse(localStorage.getItem('user')).username}
           {...register('Username', {
             required: 'The field is required',
             minLength: { value: 3, message: 'Your username needs to be at least 3 characters.' },
@@ -52,7 +50,6 @@ const EditProfile = () => {
           Email address
         </label>
         <input
-          value={JSON.parse(localStorage.getItem('user')).email}
           {...register('Email address', {
             required: 'The field is required',
             pattern: {
@@ -90,7 +87,6 @@ const EditProfile = () => {
           Avatar image (url)
         </label>
         <input
-          value={JSON.parse(localStorage.getItem('user')).avatar}
           {...register('Avatar', { required: 'The field is required' })}
           type="avatar"
           id="avatar"
